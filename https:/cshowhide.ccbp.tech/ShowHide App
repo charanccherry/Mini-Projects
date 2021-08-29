@@ -1,0 +1,125 @@
+#index.js
+import {Component} from 'react'
+
+import './index.css'
+
+class ShowHide extends Component {
+  state = {showFirstName: false, showLastName: false}
+
+  onClickShowFirstName = () => {
+    this.setState(prevState => ({showFirstName: !prevState.showFirstName}))
+  }
+
+  onClickShowLastName = () => {
+    this.setState(prevState => ({showLastName: !prevState.showLastName}))
+  }
+
+  render() {
+    const {showFirstName, showLastName} = this.state
+    return (
+      <div className="Container">
+        <h1 className="heading">Show/Hide</h1>
+        <div className="showhide-cont">
+          <div className="firstName">
+            <button
+              type="button"
+              onClick={this.onClickShowFirstName}
+              className="showhide-Name-title"
+            >
+              Show/Hide Firstname
+            </button>
+            {showFirstName && <p className="showhide-Name-para">Sai</p>}
+          </div>
+          <div className="lastName">
+            <button
+              type="button"
+              onClick={this.onClickShowLastName}
+              className="showhide-Name-title"
+            >
+              Show/Hide Lastname
+            </button>
+            {showLastName && <p className="showhide-Name-para">Charan</p>}
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+export default ShowHide
+
+----------------------------------------------------------------------
+#index.css
+/* Write your CSS here */
+.Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to left, #36a93f, black);
+  background-size: cover;
+  height: 100vh;
+}
+.heading {
+  color: white;
+  font-family: 'Bree Serif';
+}
+.showhide-cont {
+  display: flex;
+  margin: 10px;
+  justify-content: space-around;
+}
+.firstName {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.showhide-Name-title {
+  color: #36a93f;
+  background-color: black;
+  border-radius: 5px;
+  font-size: small;
+  padding: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.lastName {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.showhide-Name-para {
+  color: white;
+  text-align: center;
+  font-family: 'Bree Serif';
+  background-color: black;
+  border-radius: 5px;
+  font-size: 22px;
+  padding: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+----------------------------------------------------------------------
+#App.js
+import ShowHide from './components/ShowHide'
+
+import './App.css'
+
+const App = () => <ShowHide />
+
+export default App
+
+----------------------------------------------------------------------
+#App.css
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
