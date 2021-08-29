@@ -1,0 +1,115 @@
+#Index.js
+import {Component} from 'react'
+
+import './index.css'
+
+class LightDarkMode extends Component {
+  state = {isDarkMode: true}
+
+  onClickButton = () => {
+    this.setState(prevState => ({isDarkMode: !prevState.isDarkMode}))
+  }
+
+  render() {
+    const {isDarkMode} = this.state
+    const modeClassName = isDarkMode ? 'darkMode' : 'lightMode'
+    const buttonText = isDarkMode ? 'Light Mode' : 'Dark Mode'
+
+    return (
+      <div className={`bg-cont ${modeClassName}`}>
+        <div className="card-cont">
+          <img
+            src="https://thumbs.dreamstime.com/b/d-human-click-here-symbol-white-background-36109920.jpg"
+            alt="img"
+            className="image"
+            onClick={this.onClickButton}
+          />
+          <button className="button" type="button">
+            {buttonText}
+          </button>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default LightDarkMode
+---------------------------------------------------------------------------------------------------
+#Index.css
+/* Write your CSS here */
+.bg-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 100vh;
+}
+.card-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 50px;
+  box-shadow: 10px;
+  border-color: black;
+  border-width: 2px;
+  padding: 10px;
+}
+.heading {
+  font-weight: lighter;
+  font-family: 'Bree Serif';
+}
+.button {
+  background-color: transparent;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 14px;
+  font-family: 'Bree Serif';
+  padding: 5px;
+  margin: 5px;
+}
+.darkMode {
+  background-image: url('https://i.pinimg.com/originals/b1/17/0e/b1170e74d9b4248eb188c155801d0973.jpg');
+  background-size: cover;
+  color: white;
+}
+.lightMode {
+  background-image: url('https://ak.picdn.net/shutterstock/videos/21081103/thumb/1.jpg');
+  background-size: cover;
+  color: white;
+  border: 1px solid #000000;
+}
+.image {
+  border-radius: 150px;
+  height: 150px;
+  width: 150px;
+  margin: 5px;
+}
+
+---------------------------------------------------------------------------------------------------
+#App.js
+import LightDarkMode from './components/LightDarkMode'
+
+import './App.css'
+
+const App = () => <LightDarkMode />
+
+export default App
+
+---------------------------------------------------------------------------------------------------
+#App.css
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
