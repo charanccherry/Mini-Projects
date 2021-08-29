@@ -1,0 +1,94 @@
+#index.js
+import {Component} from 'react'
+
+import './index.css'
+
+class Welcome extends Component {
+  state = {isSubscribed: false}
+
+  onSubscribeClick = () => {
+    this.setState(prevState => ({isSubscribed: !prevState.isSubscribed}))
+  }
+
+  getButtonText = () => {
+    const {isSubscribed} = this.state
+    return isSubscribed ? 'Subscribed' : 'Subscribe'
+  }
+
+  render() {
+    const buttonText = this.getButtonText()
+    return (
+      <div>
+        <h1>Welcome</h1>
+        <p>Thank You! Happy Learning</p>
+        <img
+          onClick={this.onSubscribeClick}
+          alt="img"
+          src="https://thumbs.dreamstime.com/b/d-human-click-here-symbol-white-background-36109920.jpg"
+        />
+        <button type="button">{buttonText}</button>
+      </div>
+    )
+  }
+}
+export default Welcome
+
+--------------------------------------------------------------------------
+#CSS
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  height: 100vh;
+}
+h1 {
+  color: purple;
+  font-size: 60px;
+  font-weight: bolder;
+  font-family: 'Bree Serif';
+}
+p {
+  color: white;
+  font-size: 38px;
+  font-family: 'Bree Serif';
+}
+img {
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+  margin: 5px;
+}
+button {
+  background-color: purple;
+  color: white;
+  border-style: none;
+  border-radius: 5px;
+  width: 100px;
+  font-family: 'Bree Serif';
+  padding: 10px;
+}
+--------------------------------------------------------------------------
+#App.js
+import Welcome from './components/Welcome'
+
+import './App.css'
+
+const App = () => <Welcome />
+
+export default App
+--------------------------------------------------------------------------
+#App.css
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
