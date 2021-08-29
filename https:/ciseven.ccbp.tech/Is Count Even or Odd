@@ -1,0 +1,129 @@
+#index.js
+import {Component} from 'react'
+
+import './index.css'
+
+class EvenOddApp extends Component {
+  state = {count: 0}
+
+  getRandomNum = () => Math.ceil(Math.random() * 100)
+
+  onClickIncrement = () => {
+    const randomNum = this.getRandomNum()
+    this.setState(prevState => ({count: prevState.count + randomNum}))
+  }
+
+  onClickReset = () => {
+    this.setState(prevState => ({count: prevState.count === ''}))
+  }
+
+  render() {
+    const {count} = this.state
+    const displayText = count % 2 === 0 ? 'Even' : 'Odd'
+    return (
+      <div className="bg-countEven">
+        <div className="card-countEven">
+          <h1 className="heading">
+            Count<span className="span-text"> {count}</span>
+          </h1>
+          <p className="count-para">
+            Count is<span className="span-text"> {displayText}</span>
+          </p>
+          <button
+            onClick={this.onClickIncrement}
+            className="btn-countEven"
+            type="button"
+          >
+            Increment
+          </button>
+          <p className="text-para">
+            *Increase By Random Number Between 0 to 100
+          </p>
+          <button
+            onClick={this.onClickReset}
+            className="btn-reset"
+            type="button"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+    )
+  }
+}
+export default EvenOddApp
+-------------------------------------------------------------------------------------
+#index.css
+.bg-countEven {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://wallpaperaccess.com/full/1729304.jpg');
+  height: 100vh;
+}
+.card-countEven {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 400px;
+  padding: 50px;
+  border-radius: 10px;
+  background-image: radial-gradient(#e4100e, black);
+}
+.heading {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Bree Serif';
+}
+.span-text {
+  color: black;
+  font-size: 40px;
+}
+.count-para {
+  color: white;
+  font-size: 16px;
+  font-family: 'Bree Serif';
+}
+.btn-countEven {
+  background-image: linear-gradient(to left, #e4100e, #f784b3);
+  border-radius: 5px;
+  width: 100px;
+  padding: 5px;
+}
+.text-para {
+  color: white;
+  font-size: 12px;
+  font-family: 'Bree Serif';
+}
+.btn-reset {
+  background-image: radial-gradient(#f784b3, #e4100e);
+  border-radius: 5px;
+}
+
+-------------------------------------------------------------------------------------
+#App.js
+import EvenOddApp from './components/EvenOddApp'
+import './App.css'
+
+const App = () => <EvenOddApp />
+
+export default App
+
+-------------------------------------------------------------------------------------
+#App.css
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
