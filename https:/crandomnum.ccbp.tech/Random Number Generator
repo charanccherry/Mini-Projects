@@ -1,0 +1,136 @@
+#index.js
+import {Component} from 'react'
+
+import './index.css'
+
+class RandomNumberGenerator extends Component {
+  state = {randomNumber: 0}
+
+  getRandomNum = () => Math.ceil(Math.random() * 100)
+
+  onGenerate = () => {
+    const randomNum = this.getRandomNum()
+    this.setState({randomNumber: randomNum})
+  }
+
+  render() {
+    const {randomNumber} = this.state
+    return (
+      <div className="container">
+        <div className="random-cont">
+          <h1>Random Number</h1>
+          <p>Generate a random number in the range of 0 to 100</p>
+          <img
+            alt="img"
+            src="https://thumbs.dreamstime.com/b/d-human-click-here-symbol-white-background-36109920.jpg"
+          />
+          <button onClick={this.onGenerate} type="button">
+            Generate
+          </button>
+          <h1>{randomNumber}</h1>
+        </div>
+      </div>
+    )
+  }
+}
+export default RandomNumberGenerator
+
+----------------------------------------------------------------------------
+#index.css
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://img.freepik.com/free-vector/white-technology-background-concept_23-2148403398.jpg?size=626&ext=jpg');
+  background-size: cover;
+  height: 100vh;
+}
+.random-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 900px;
+  box-shadow: 20px 20px 80px rgba(7, 7, 7, 0.08);
+  padding: 50px;
+  margin-top: 280px;
+  height: 60%;
+  width: 30%;
+}
+@media screen and (max-width: 576px) {
+  .random-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 20px 20px 80px rgba(7, 7, 7, 0.08);
+    padding: 15px;
+    height: 60%;
+    width: 80%;
+    text-align: center;
+  }
+}
+h1 {
+  color: #0b69ff;
+  font-size: 30px;
+  font-family: 'Bree Serif';
+  font-weight: bold;
+}
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 20px;
+  }
+}
+p {
+  color: grey;
+  font-size: 16px;
+  font-family: 'Bree Serif';
+  margin: 5px;
+}
+@media screen and (max-width: 576px) {
+  p {
+    font-size: 14px;
+  }
+}
+button {
+  background-color: #0b69ff;
+  color: white;
+  padding: 10px;
+  border-style: none;
+  border-radius: 5px;
+}
+img {
+  border-radius: 100px;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+}
+
+----------------------------------------------------------------------------
+#App.js
+import RandomNumberGenerator from './components/RandomNumberGenerator'
+
+import './App.css'
+
+const App = () => <RandomNumberGenerator />
+
+export default App
+
+----------------------------------------------------------------------------
+#App.css
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
