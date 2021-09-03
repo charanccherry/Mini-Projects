@@ -1,0 +1,74 @@
+.feedbackQuesCont {
+  display: flex;
+  flex-direction: column;
+}
+.heading {
+  font-family: 'Sans Serif';
+  font-weight: bold;
+  font-size: 26px;
+  text-align: center;
+}
+.emojis-cont {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.emoji-detail {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+.emoji {
+  height: 50px;
+  width: 50px;
+}
+.emoji-text {
+  font-family: 'Sans Serif';
+  font-size: 12px;
+  text-align: center;
+}
+.review-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loveEmojiUrl {
+  height: 40px;
+  width: 40px;
+  margin: 20px;
+}
+.thank-head {
+  font-family: 'Sans Serif';
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}
+.thank-text {
+  font-family: 'Sans Serif';
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+.app-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  height: 100vh;
+}
+.app-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(#7215d8, #9544ed);
+  width: 600px;
+  max-width: 700px;
+  height: 40vh;
+  max-height: 45vh;
+  border-radius: 20px;
+}
