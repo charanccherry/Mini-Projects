@@ -1,0 +1,121 @@
+.stopwatch {
+  background-image: url('https://media.istockphoto.com/vectors/ringing-alarm-clock-is-in-the-hand-of-a-man-vector-id1132785620?k=6&m=1132785620&s=170667a&w=0&h=3vTnmbNcTskSJcOI0X9C2sIuFMMdBB1sf2TtrR0MLKA=');
+  background-size: cover;
+  height: 100vh;
+  padding: 50px;
+}
+@media screen and (max-width: 768px) {
+  .stopwatch {
+    padding: 0px;
+    background-image: url('https://images.unsplash.com/photo-1566838093179-44be1f1c79b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+  }
+}
+.stopwatch-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heading {
+  font-size: 50px;
+  font-family: 'Sans Serif';
+  font-weight: bold;
+  color: #096880;
+  margin-left: 150px;
+}
+@media screen and (max-width: 768px) {
+  .heading {
+    margin: 5px;
+    margin-top: 100px;
+  }
+}
+.stopwatch-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  background-color: white;
+  box-shadow: 0px 4px 40px rgba(23, 31, 70, 0.16);
+  border-radius: 50px;
+  width: 40vw;
+  margin-top: 30px;
+  margin-left: 150px;
+}
+@media screen and (max-width: 768px) {
+  .stopwatch-cont {
+    height: 50vh;
+    width: 70vw;
+    margin: 10px;
+    border-radius: 25px;
+  }
+}
+.stopwatch-timer {
+  display: flex;
+  align-items: center;
+}
+.stopwatch-icon {
+  height: 50px;
+  width: 50px;
+  margin: 15px;
+}
+@media screen and (max-width: 768px) {
+  .stopwatch-icon {
+    height: 30px;
+    width: 30px;
+  }
+}
+.stopwatch-text {
+  font-size: 30px;
+  font-family: 'Sans Serif';
+  font-weight: bold;
+  color: #096880;
+}
+@media screen and (max-width: 768px) {
+  .stopwatch-text {
+    font-size: 20px;
+  }
+}
+.time {
+  font-size: 100px;
+  font-family: 'Sans Serif';
+  font-weight: bold;
+  color: #096880;
+  margin-top: 5px;
+}
+@media screen and (max-width: 768px) {
+  .time {
+    font-size: 50px;
+  }
+}
+.stopwatch-buttons {
+  display: flex;
+  align-items: center;
+}
+.button {
+  color: white;
+  font-size: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  margin: 5px;
+  height: 40px;
+  width: 80px;
+}
+@media screen and (max-width: 768px) {
+  .button {
+    height: 30px;
+    width: 60px;
+    font-size: 10px;
+  }
+}
+.startBtn {
+  background-color: green;
+}
+.stopBtn {
+  background-color: red;
+}
+.resetBtn {
+  background-color: goldenrod;
+}
