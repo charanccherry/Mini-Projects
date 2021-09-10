@@ -1,0 +1,32 @@
+.blogItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style-type: none;
+  border-bottom: 1px solid #e7e5ea;
+}
+.title-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.title {
+  display: flex;
+  justify-content: flex-start;
+  color: #12022f;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Roboto';
+}
+.publishedDate {
+  display: flex;
+  justify-content: flex-end;
+  color: #616e7c;
+  font-size: 25px;
+  font-family: 'Roboto';
+}
+.description {
+  color: #616e7c;
+  font-size: 25px;
+  font-family: 'Roboto';
+}
