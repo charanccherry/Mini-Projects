@@ -1,0 +1,53 @@
+.header-cont {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.first-part {
+  display: flex;
+  align-items: center;
+}
+.wave {
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  margin: 15px;
+}
+.wave-name {
+  color: #12022f;
+  font-size: 30px;
+  font-family: 'Roboto';
+  font-weight: bold;
+}
+.second-part {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.second-wave-text {
+  color: #12022f;
+  font-size: 30px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  margin: 15px;
+}
+.hyper-link {
+  text-decoration: none;
+  color: #12022f;
+}
+
+@media screen and (max-width: 768px) {
+  .wave {
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    margin: 5px;
+  }
+  .wave-name {
+    font-size: 20px;
+  }
+  .second-wave-text {
+    font-size: 13px;
+    margin: 5px;
+  }
+}
