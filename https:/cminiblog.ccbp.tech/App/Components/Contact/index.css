@@ -1,0 +1,30 @@
+.contact-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact {
+  height: 300px;
+  width: 300px;
+  padding: 10px;
+  margin-top: 200px;
+}
+.contact-text {
+  color: #6d396b;
+  font-size: 50px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  margin-top: 20px;
+}
+@media screen and (max-width: 768px) {
+  .contact {
+    height: 150px;
+    width: 150px;
+    padding: 5px;
+    margin-top: 150px;
+  }
+  .contact-text {
+    font-size: 30px;
+  }
+}
